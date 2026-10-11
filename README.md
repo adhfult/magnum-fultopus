@@ -1,6 +1,11 @@
 # magnum-fultopus
 
-A local-first, four-pillar computational research lab: chip thermals, AI on small hardware, astrophysics, and quantum/quant trading research, measured on my own machines.
+A local-first research lab built on one argument: computation is limited by
+moving bytes and removing heat, and the mathematics that describes those limits
+(linear algebra, partial differential equations, stochastic processes) is the
+same mathematics that finds planets in noisy light curves and structure in noisy
+markets. Four pillars (heat, bytes, stars, signals), measured on my own
+machines. Full charter: `docs/CHARTER.md`.
 
 ## Run it
 ```bash
@@ -25,6 +30,7 @@ uv run ruff check . && uv run ruff format --check .
 See `deploy/pi/README.md`.
 
 ## Where things are
+- `docs/CHARTER.md`, `docs/NOW.md`, `docs/JOURNAL.md`: charter, current fortnight, newest-first log
 - `docs/PRODUCT.md`: what this is, who it's for, what it isn't
 - `docs/ARCHITECTURE.md`: how it's built
 - `docs/SECURITY.md`: project-specific security rules
