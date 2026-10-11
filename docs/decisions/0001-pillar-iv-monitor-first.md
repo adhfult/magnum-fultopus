@@ -8,7 +8,7 @@ Charter Part 8 framed Pillar IV as quantum and quantitative trading research.
 Adham wants a market monitor for now, not a trader. A monitor already exists:
 Adham's fork github.com/adhfult/tradingview-mcp (local checkout
 `~/code/tradingview-mcp`, working branch `claude/lucid-bardeen-3ou62p`). It has
-read-only market data tools, backtests, and a watcher (in progress) with alert
+read-only market data tools, backtests, and a watcher (code done) with alert
 rules, a local API and a systemd unit example for the Pi (not deployed yet).
 It runs standalone. Charter Part 15 Q3 asked
 whether such a project should live in this repo or stay separate.
@@ -29,7 +29,7 @@ whether such a project should live in this repo or stay separate.
 
 ## Consequences
 - Easier: the monitor and its planned Pi service keep evolving in their own repo.
-- Known gap: tradingview-mcp caches only in memory (60 s TTL), not on disk.
+- Known gap: tradingview-mcp caches only in memory (60 s by default, plus a 6 h stale fallback), not on disk.
   Charter rule 3 wants every pull cached to disk. Future task.
 - GitHub `main` of that fork is behind (v0.9.0: no watcher, no `tv_*` tools).
   Pointers name the local branch, which is v0.10.0.

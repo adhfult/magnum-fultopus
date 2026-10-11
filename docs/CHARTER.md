@@ -578,8 +578,8 @@ rebuilding it:
 | What problem does it solve (portfolio selection, signal, execution, pricing)? | market monitoring (watchlist alerts, screeners, read-only data) plus backtests |
 | What's "quantum" in it: QUBO/QAOA, annealing, quantum ML, or quantum-inspired? | none, deferred |
 | Which library (Qiskit, PennyLane, D-Wave Ocean, custom simulator)? | Python MCP server (FastMCP) plus a Node bridge on `@mathieuc/tradingview` 4.0.0 |
-| What's the classical baseline it's compared against? | buy-and-hold SPY after costs (rule 5); cost keys from phase 6a (in progress) |
-| What data, which date range, cached where? | Yahoo Finance and TradingView public endpoints; live pulls; 60 s in-memory cache only, not cached to disk yet |
+| What's the classical baseline it's compared against? | buy-and-hold of the backtested symbol after costs (built into `backtest_strategy`); the SPY-after-costs baseline (rule 5) is for this repo's validation harness to add |
+| What data, which date range, cached where? | Yahoo Finance and TradingView public endpoints; live pulls; in-memory cache only (60 s by default, 6 h stale fallback), not cached to disk yet |
 | What are transaction costs assumed to be? | per-backtest cost settings; cost drag reported by the phase 6a cost keys (in progress) |
 | Which parts did you write by hand? | none; it is an upstream fork (atilaahmettaner/tradingview-mcp) plus Claude-built phases |
 
@@ -717,7 +717,7 @@ notebook), and the wrong turns.
 ├── p3_astro/
 │   ├── transits/  nbody/  gw/  instruments/
 ├── p4_quant/
-│   ├── data/  validation/  classical/  qubo/  qaoa/  results/
+│   ├── data/  validation/  classical/  qubo/  qaoa/ (deferred, 0001)  results/
 └── results/                  # committed CSVs + PNGs that back public claims
 ```
 
