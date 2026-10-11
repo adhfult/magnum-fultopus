@@ -1,7 +1,7 @@
 [project]
 name = "magnum-fultopus"
 version = "0.1.0"
-description = "A local-first, four-pillar computational research lab: chip thermals, AI on small hardware, astrophysics, and quantum/quant trading research, measured on my own machines."
+description = "A local-first, four-pillar computational research lab: chip thermals, AI on small hardware, astrophysics, and market monitoring, measured on my own machines."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []

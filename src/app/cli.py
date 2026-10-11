@@ -12,7 +12,7 @@ from app.config import Settings
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="app",
-        description="A local-first, four-pillar computational research lab: chip thermals, AI on small hardware, astrophysics, and quantum/quant trading research, measured on my own machines.",
+        description="A local-first, four-pillar computational research lab: chip thermals, AI on small hardware, astrophysics, and market monitoring, measured on my own machines.",
     )
     parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)

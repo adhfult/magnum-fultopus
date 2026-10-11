@@ -4,6 +4,14 @@ Newest first. Each entry: what was built and run, the numbers, what it means
 (physics/maths written out so it can be copied into the paper notebook), and
 the wrong turns. (Charter Part 9.4.)
 
+## 2026-10-11: Setup and Pillar IV reframe
+
+**Built:** pytest and ruff wired so tests can live next to code in `core/`, `bench/`, `telemetry/` and the pillar folders, plus `tests/test_layout.py`. Pillar IV is now monitor-first via tradingview-mcp (decision 0001); quantum/QUBO deferred; `.mcp.json` added.
+
+**Run:** PC/WSL. `uv run pytest`: 14 passed before, 15 after. `ruff check` and `ruff format --check` clean.
+
+**Wrong turns:** the Dependabot PR (ruff 0.16.10) was merged after local checks because GitHub Actions jobs did not start (account billing/spending limit; private repo).
+
 ## 2026-10-11: Founding
 
 **Built:** repo created locally from `template-local`; charter copied to

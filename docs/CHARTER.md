@@ -558,6 +558,8 @@ hardware (a hydrogen-line detection or a measured variable-star light curve).
 
 ## 8. Pillar IV: Quantum and quantitative trading research
 
+Pillar IV is monitor-first and quantum is deferred: see docs/decisions/0001-pillar-iv-monitor-first.md.
+
 ### 8.1 The question
 
 *Do quantum and quantum-inspired optimization methods find better portfolios
@@ -573,13 +575,13 @@ rebuilding it:
 
 | Question | Answer (fill in) |
 |---|---|
-| What problem does it solve (portfolio selection, signal, execution, pricing)? | |
-| What's "quantum" in it: QUBO/QAOA, annealing, quantum ML, or quantum-inspired? | |
-| Which library (Qiskit, PennyLane, D-Wave Ocean, custom simulator)? | |
-| What's the classical baseline it's compared against? | |
-| What data, which date range, cached where? | |
-| What are transaction costs assumed to be? | |
-| Which parts did you write by hand? | |
+| What problem does it solve (portfolio selection, signal, execution, pricing)? | market monitoring (watchlist alerts, screeners, read-only data) plus backtests |
+| What's "quantum" in it: QUBO/QAOA, annealing, quantum ML, or quantum-inspired? | none, deferred |
+| Which library (Qiskit, PennyLane, D-Wave Ocean, custom simulator)? | Python MCP server (FastMCP) plus a Node bridge on `@mathieuc/tradingview` 4.0.0 |
+| What's the classical baseline it's compared against? | buy-and-hold SPY after costs (rule 5); cost keys from phase 6a (in progress) |
+| What data, which date range, cached where? | Yahoo Finance and TradingView public endpoints; live pulls; 60 s in-memory cache only, not cached to disk yet |
+| What are transaction costs assumed to be? | per-backtest cost settings; cost drag reported by the phase 6a cost keys (in progress) |
+| Which parts did you write by hand? | Adham to fill in |
 
 Then the rules below apply to it as to everything else.
 

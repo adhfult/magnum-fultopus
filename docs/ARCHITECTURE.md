@@ -30,3 +30,7 @@ What the tool stores, where (`DATA_DIR`), and for how long.
 
 ## External inputs
 Websites, APIs, devices, or files the tool reads, with any limits or terms.
+
+- tradingview-mcp: sibling repo (`~/code/tradingview-mcp`), MCP over stdio via
+  `.mcp.json`. Its watcher has a local API on 127.0.0.1:8787. It reads
+  third-party market data, so it is not offline. Respect upstream rate limits.

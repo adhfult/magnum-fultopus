@@ -1,10 +1,10 @@
 # magnum-fultopus
 
-A local-first, four-pillar computational research lab: chip thermals, AI on small hardware, astrophysics, and quantum/quant trading research, measured on my own machines.
+A local-first, four-pillar computational research lab: chip thermals, AI on small hardware, astrophysics, and market monitoring, measured on my own machines.
 
 Four pillars: (I) thermodynamics & microchip engineering, (II) AI hardware &
 small-memory models, (III) computational astrophysics & instrumentation,
-(IV) quantum & quantitative trading research. One thesis: computation is limited
+(IV) quantitative markets: monitoring first, quantum deferred. One thesis: computation is limited
 by moving bytes and removing heat; the same maths (SVD, PDEs, stochastic
 processes, optimization) runs through all four. Full charter: docs/CHARTER.md.
 
