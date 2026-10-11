@@ -1,0 +1,7 @@
+[Unit]
+Description=magnum-fultopus (one run)
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/code/magnum-fultopus
+ExecStart=%h/.local/bin/uv run app status

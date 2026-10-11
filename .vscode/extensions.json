@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "anthropic.claude-code",
+    "GitHub.copilot-chat",
+    "ms-python.python",
+    "charliermarsh.ruff",
+    "ms-vscode-remote.remote-ssh",
+    "usernamehw.errorlens",
+    "mikestead.dotenv"
+  ]
+}
