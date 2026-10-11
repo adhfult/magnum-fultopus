@@ -581,7 +581,7 @@ rebuilding it:
 | What's the classical baseline it's compared against? | buy-and-hold SPY after costs (rule 5); cost keys from phase 6a (in progress) |
 | What data, which date range, cached where? | Yahoo Finance and TradingView public endpoints; live pulls; 60 s in-memory cache only, not cached to disk yet |
 | What are transaction costs assumed to be? | per-backtest cost settings; cost drag reported by the phase 6a cost keys (in progress) |
-| Which parts did you write by hand? | Adham to fill in |
+| Which parts did you write by hand? | none; it is an upstream fork (atilaahmettaner/tradingview-mcp) plus Claude-built phases |
 
 Then the rules below apply to it as to everything else.
 
