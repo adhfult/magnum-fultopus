@@ -20,8 +20,8 @@ build-backend = "hatchling.build"
 packages = ["src/app"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
-addopts = "-q"
+pythonpath = ["."]
+addopts = "-q --import-mode=importlib"
 
 [tool.ruff]
 line-length = 100
@@ -36,3 +36,4 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["S"]
+"**/test_*.py" = ["S"]
