@@ -58,8 +58,18 @@ a plain filter on `metric` and a time window.
 | Machine | Source | Gives | Notes |
 |---|---|---|---|
 | PC (Windows side) | LibreHardwareMonitor | GPU power, GPU and CPU temperature, utilization | Exporter runs in WSL and reads LHM over localhost, so code and git stay in Ubuntu. LHM has a built-in web server option; **[verify the URL and JSON shape from LHM's docs or by running it, before writing the parser]** |
-| Pi 400 | Linux sysfs (`/sys/class/thermal/thermal_zone0/temp`) | CPU temperature | The Pi 400 has no power sensor, so **Pi power is not measured** until a wall-plug meter exists. Do not invent a number. |
-| Any Linux | sysfs/hwmon | CPU temperature | Used for tests and the laptop |
+| Pi 400 | Linux sysfs and `/proc` (`thermal_zone0/temp`, cpufreq, meminfo, CPU stat) | `cpu_temp_c`, `cpu_util_pct`, `cpu_freq_mhz`, `mem_used_pct`, `mem_used_gb` | The old project measured exactly these on the Pi (see below). No power sensor, so **no Pi power** until a wall-plug meter exists. Do not invent a number. |
+| Any Linux | same sources | same metrics | Used for tests and the laptop |
+
+Keep the old metric names so old and new Pi data join without renaming.
+
+## What is already known about the Pi
+Source: old project `05_telemetry/analysis/FINDINGS.md` (closed out 21 Sep 2026, read 2026-10-11).
+It logged 483,685 rows over about 27 days (roughly one sample per 5 s, from the row count).
+- Idle the whole time: mean CPU utilization 0.79%, mean `cpu_temp_c` 36.81 C (min 31.15, max 43.33).
+- No usable load-drop events, so **no thermal time constant exists yet**. Pillar I needs a deliberate step-load test on the Pi, not more idle logging.
+- The exporter stopped on 21 Sep when the SD card was repurposed, so the Pi currently has no telemetry destination. This spec gives it one.
+- The old parquet file is a comparison source, not something to copy code from. Importing it as history is optional and out of scope here.
 
 ## Acceptance criteria
 - [ ] A `Row` with a missing column, a non-number value, or an empty unit is rejected with a clear error.
@@ -78,7 +88,7 @@ a plain filter on `metric` and a time window.
 ## Out of scope
 - Plots and dashboards. Parquet. Deploying the exporter on the Pi (a later task, uses `deploy/pi/`).
 - The `core/` SVD wrapper and hand-computed-case test helper (separate, next).
-- GPU utilization on the Pi, and any power measurement for the Pi or laptop.
+- Any power measurement for the Pi or laptop. The Pi step-load test (for the thermal time constant) is a Pillar I task, not part of this spec.
 
 ## Test plan
 - Unit tests in `bench/` and `telemetry/` next to the code, using fake sources
