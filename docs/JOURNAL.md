@@ -8,6 +8,8 @@ the wrong turns. (Charter Part 9.4.)
 
 **Built:** pytest and ruff wired so tests can live next to code in `core/`, `bench/`, `telemetry/` and the pillar folders, plus `tests/test_layout.py`. Pillar IV is now monitor-first via tradingview-mcp (decision 0001); quantum/QUBO deferred; `.mcp.json` added.
 
+The old `study-of-important-things` repo (the archived research-lab) was set read-only on GitHub; the Pi stock station can still pull from it.
+
 **Run:** PC/WSL. `uv run pytest`: 14 passed before, 15 after. `ruff check` and `ruff format --check` clean.
 
 **Wrong turns:** the Dependabot PR (ruff 0.16.10) was merged after local checks because GitHub Actions jobs did not start (account billing/spending limit; private repo).
